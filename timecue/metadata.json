@@ -1,0 +1,5 @@
+{
+  "name": "TimeCue",
+  "description": "A modern, full-stack reminder application with real-time sync, authentication, and smart notifications.",
+  "requestFramePermissions": ["notifications"]
+}
