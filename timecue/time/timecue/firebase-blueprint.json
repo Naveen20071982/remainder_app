@@ -1,0 +1,43 @@
+{
+  "entities": {
+    "Reminder": {
+      "title": "Reminder",
+      "description": "A scheduled event reminder",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "scheduledAt": { "type": "string", "format": "date-time" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "isCompleted": { "type": "boolean" },
+        "notificationsEnabled": { "type": "boolean" },
+        "snoozedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "title", "scheduledAt", "createdAt", "isCompleted", "notificationsEnabled"]
+    },
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile data",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" }
+      },
+      "required": ["uid", "email"]
+    }
+  },
+  "firestore": {
+    "/reminders/{reminderId}": {
+      "schema": "Reminder",
+      "description": "Collection of reminders"
+    },
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "User profile documents"
+    }
+  }
+}
